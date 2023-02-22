@@ -3,12 +3,12 @@ import { FiTrash } from 'react-icons/fi';
 
 const TodoItem = (props) => {
 
-    const { task, function: handleSetCompletedTask, tasks, taskIndex, activeTab } = props;
+    const { task, function: handleSetCompletedTask, tasksToSet, taskIndex, activeTab } = props;
 
     const completedState = task.isCompleted;
 
     const handleClick = () => {
-        const updatedTasks = tasks.map((t, index) => {
+        const updatedTasks = tasksToSet.map((t, index) => {
             if (index === taskIndex) {
                 return {
                     taskName: t.taskName,
@@ -21,7 +21,7 @@ const TodoItem = (props) => {
     };
 
     const handleDeleteClick = () => {
-        const updatedTasks = props.tasks.filter((t, index) => {
+        const updatedTasks = props.tasksToSet.filter((t, index) => {
             return index !== props.taskIndex;
         });
         handleSetCompletedTask(updatedTasks);
@@ -32,9 +32,6 @@ const TodoItem = (props) => {
         color: completedState ? 'gray' : 'black',
         fontStyle: completedState ? 'italic' : 'normal'
     };
-
-    console.log(activeTab);
-
 
     return (
         <div>

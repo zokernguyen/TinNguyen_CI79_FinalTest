@@ -2,15 +2,15 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 function TodoList(props) {
-    const toShowTaks = props.tasks;
+    const toShowTasks = props.tasksToRender;
 
     return (
         <div>
-            {toShowTaks.map((task, index) => (
+            {toShowTasks.map((task, index) => (
                 <TodoItem
                     key={index}
                     task={task}
-                    tasks={props.tasks}
+                    tasksToSet={props.tasksToSet}
                     taskIndex={index}
                     function={props.function}
                     activeTab={props.activeTab}

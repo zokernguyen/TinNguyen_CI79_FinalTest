@@ -8,7 +8,7 @@ import './style.css';
 const DeleteButton = (props) => {
 
   const handleDeleteAll = () => {
-    props.setTasks(props.tasks.filter((task) => task.isCompleted === false))
+    props.setTasks(props.tasksToSet.filter((task) => task.isCompleted === false))
   }
 
   return (
@@ -83,13 +83,14 @@ function App() {
       <Form addTask={addTask} />
 
       <TodoList
-        tasks={filteredTasks}
+        tasksToSet={tasks}
+        tasksToRender={filteredTasks}
         function={setTasks}
         activeTab={activeTab}
       />
 
       <DeleteButton
-        tasks={tasks}
+        tasksToSet={tasks}
         setTasks={setTasks}
         activeTab={activeTab} />
 
