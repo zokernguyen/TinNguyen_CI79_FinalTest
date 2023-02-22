@@ -19,7 +19,7 @@ const Form = (props) => {
     const inputRef = useRef();
 
     return (
-        <>
+        <div className='form'>
             <input
                 ref={inputRef}
                 value={task}
@@ -30,7 +30,7 @@ const Form = (props) => {
             <Button
                 variant="success"
                 onClick={handleAddTask}>Add</Button>
-        </>
+        </div>
     );
 }
 

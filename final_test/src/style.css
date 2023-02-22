@@ -19,3 +19,12 @@ body,
   justify-content: center;
   flex-direction: column;
 }
+
+.form > input {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px 16px;
+  outline-color: #9a9a9a;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+}

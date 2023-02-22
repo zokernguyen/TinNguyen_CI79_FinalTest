@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
 import Form from './Form';
 import Navbar from './Navbar';
+import Button from 'react-bootstrap/Button';
 import TodoList from './TodoList';
 import './style.css';
 
 const DeleteButton = (props) => {
 
   const handleDeleteAll = () => {
-    props.setTasks(props.tasks.filter((task) => !task.isCompleted))
+    props.setTasks(props.tasks.filter((task) => task.isCompleted === false))
   }
 
   return (
     <div>
       {
         props.activeTab === 'Completed' && (
-          <button onClick={handleDeleteAll}>Delete All</button>
+          <Button
+            variant='danger'
+            onClick={handleDeleteAll}>Delete All</Button>
         )
       }
 
